@@ -241,4 +241,4 @@ cd frontend && npm run build
 - **Architecture**: Local-first full-stack portfolio application.
 - **Deployment**: Intentionally designed and configured for local execution (no cloud deployment).
 - **Intelligence**: Frozen machine learning weights, calibrated threshold ($\tau = 0.59$), and deterministic rules.
-- **Repository**: Published on GitHub at [CODEwthJit/SIH26165](https://github.com/CODEwthJit/SIH26165).
+- **Repository**: Published on GitHub at [CODEwthJit/SIF-Sentinel](https://github.com/CODEwthJit/SIH26165).
