@@ -1,0 +1,76 @@
+{
+  "model_name": "sih26165_sif_ml_predictor",
+  "model_version": "1.0.0-PHASE7.1-FROZEN",
+  "model_type": "TF-IDF + LogisticRegression",
+  "task": "SIF Precursor Binary Detection (YES vs NO)",
+  "dataset": {
+    "path": "data/processed/sif_annotations_v23.csv",
+    "dataset_sha256": "abf0a7c3c036ff7564111db167f3fa6e2e905d06442ab4e4d93cb756d2846632",
+    "total_records": 2491,
+    "excluded_label": "UNCERTAIN",
+    "excluded_count": 1517,
+    "usable_binary_records": 974,
+    "binary_yes_count": 807,
+    "binary_no_count": 167
+  },
+  "input_feature": {
+    "column": "normalized_narrative",
+    "type": "text",
+    "metadata_quarantine_enforced": true
+  },
+  "splits": {
+    "methodology": "GroupShuffleSplit on leak_prevention_cluster_id (zero cluster crossover)",
+    "random_seed": 42,
+    "train_ratio": 0.70,
+    "val_ratio": 0.15,
+    "test_ratio": 0.15,
+    "train_counts": {"total": 679, "yes": 567, "no": 112, "clusters": 676},
+    "val_counts": {"total": 148, "yes": 120, "no": 28, "clusters": 145},
+    "test_counts": {"total": 147, "yes": 120, "no": 27, "clusters": 146}
+  },
+  "vectorizer_config": {
+    "algorithm": "TfidfVectorizer",
+    "ngram_range": [1, 2],
+    "min_df": 2,
+    "max_features": 5000,
+    "sublinear_tf": true,
+    "strip_accents": "unicode",
+    "lowercase": true,
+    "vocabulary_size": 4886
+  },
+  "classifier_config": {
+    "algorithm": "LogisticRegression",
+    "C": 100.0,
+    "class_weight": "balanced",
+    "solver": "lbfgs",
+    "max_iter": 1000,
+    "random_state": 42
+  },
+  "decision_threshold": {
+    "locked_threshold": 0.59,
+    "selection_partition": "validation_only",
+    "selection_metric": "Macro F1 (0.9196) with YES Recall tie-breaker (0.9833)"
+  },
+  "test_metrics": {
+    "accuracy": 0.9660,
+    "macro_f1": 0.9456,
+    "macro_precision": 0.9291,
+    "macro_recall": 0.9648,
+    "yes_precision": 0.9915,
+    "yes_recall": 0.9667,
+    "yes_f1": 0.9789,
+    "no_precision": 0.8667,
+    "no_recall": 0.9630,
+    "no_f1": 0.9123,
+    "roc_auc": 0.9954,
+    "pr_auc": 0.9990,
+    "confusion_matrix": {
+      "true_no_pred_no (TN)": 26,
+      "true_no_pred_yes (FP)": 1,
+      "true_yes_pred_no (FN)": 4,
+      "true_yes_pred_yes (TP)": 116
+    }
+  },
+  "scientific_disclaimer": "The model was trained against provisional automated V2.3 labels. Therefore, the reported metrics measure agreement with the automated annotation framework rather than independently human-validated SIF ground truth."
+}
+

@@ -1,0 +1,64 @@
+{
+  "experiment": "Phase 6.1 TF-IDF + Logistic Regression Baseline",
+  "random_seed": 42,
+  "python_version": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "environment": {
+    "sklearn_version": "1.7.2",
+    "numpy_version": "2.3.5",
+    "pandas_version": "2.3.3"
+  },
+  "dataset": {
+    "path": "data\\processed\\sif_annotations_v23.csv",
+    "total_records": 2491,
+    "excluded_uncertain": 1517,
+    "total_binary_usable": 974,
+    "binary_yes": 807,
+    "binary_no": 167
+  },
+  "splits": {
+    "train": {
+      "total": 679,
+      "yes": 567,
+      "no": 112,
+      "clusters": 676
+    },
+    "validation": {
+      "total": 148,
+      "yes": 120,
+      "no": 28,
+      "clusters": 145
+    },
+    "test": {
+      "total": 147,
+      "yes": 120,
+      "no": 27,
+      "clusters": 146
+    }
+  },
+  "features": {
+    "feature_source": "strict normalized_narrative only",
+    "metadata_quarantined": true
+  },
+  "tfidf_config": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_features": 5000,
+    "sublinear_tf": true,
+    "strip_accents": "unicode",
+    "lowercase": true
+  },
+  "vocabulary_size": 4886,
+  "selected_hyperparameters": {
+    "C": 100.0,
+    "class_weight": "balanced",
+    "solver": "lbfgs",
+    "max_iter": 1000
+  },
+  "threshold_selection": {
+    "locked_threshold": 0.59,
+    "metric": "validation macro F1 with YES recall tie-breaker"
+  }
+}

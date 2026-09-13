@@ -1,0 +1,71 @@
+# Environment variables and secrets
+# ===================================================================
+# SIF Sentinel — Version Control Exclusions (.gitignore)
+# ===================================================================
+
+# Environment Variables & Secrets
+.env
+.env.*
+.env.local
+*.env
+*.secret
+!.env.example
+!frontend/.env.example
+
+# Database
+# Relational & SQLite Databases (User accounts, auth tokens & analyzed records)
+*.db
+*.sqlite
+*.sqlite3
+sif_backend.db
+
+# Python
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python Build & Bytecode Artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Frontend / Node
+# Frontend Node Modules, Build Output & Test Coverage
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+frontend/coverage/
+coverage/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / IDE
+# Heavy Offline Training Datasets (~50 MB raw/processed CSVs)
+data/raw/
+data/processed/
+*.csv.gz
+
+# System Logs
+*.log
+
+# OS & Editor Specific Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# NOTE: ML Model & Vectorizer joblib artifacts (ml/tfidf_baseline_*.joblib)
+# are REQUIRED production runtime dependencies and MUST NOT be ignored.

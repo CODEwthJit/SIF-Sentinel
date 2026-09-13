@@ -1,0 +1,20 @@
+{
+  "accuracy": 0.9659863945578231,
+  "macro_precision": 0.9290598290598291,
+  "macro_recall": 0.9648148148148148,
+  "macro_f1": 0.9455918276704419,
+  "yes_precision": 0.9914529914529915,
+  "yes_recall": 0.9666666666666667,
+  "yes_f1": 0.9789029535864979,
+  "no_precision": 0.8666666666666667,
+  "no_recall": 0.9629629629629629,
+  "no_f1": 0.9122807017543859,
+  "roc_auc": 0.9953703703703703,
+  "pr_auc": 0.9990058162827139,
+  "confusion_matrix": {
+    "true_no_pred_no (TN)": 26,
+    "true_no_pred_yes (FP)": 1,
+    "true_yes_pred_no (FN)": 4,
+    "true_yes_pred_yes (TP)": 116
+  }
+}
